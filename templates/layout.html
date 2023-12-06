@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer sitio web con Python</title>
+    <!--Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--custom CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Python app web</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <!--la url que proporcione es la de funcion about que me dirije al html aboaut esa seria la ruta-->
+                <a class="nav-link active" aria-current="page" href="{{url_for('about')}}">Abaut</a> 
+              </li>
+              <li class="nav-item">
+                 <!--la url que proporcione es la de funcion "texto" que en este caso no me dirije a ningun html -->
+                  <!--De esta manera vemos dos formas distintas de acceder a las funciones y html cuando corresponden-->
+                <a class="nav-link" href="{{url_for('home')}}">Home</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>
